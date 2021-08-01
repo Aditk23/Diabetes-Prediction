@@ -19,7 +19,7 @@ def inputs():
     f = request.form.get('mass')
     g = request.form.get('pedi')
     h = request.form.get('age')
-    pred = model.predict([[int(a),int(b),int(c),int(e),int(f),int(g),int(h)]])
+    pred = model.predict([[float(a),float(b),float(c),float(e),float(f),float(g),float(h)]])
     if(pred[0]):
         output = 'have'
     else:
