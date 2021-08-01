@@ -8,7 +8,7 @@ app = Flask(__name__)
 model = joblib.load('diabetes_model.pkl')
 @app.route('/')
 def welcome():
-    return render_template('input.html')
+    return render_template('index.html')
 
 @app.route('/input',methods=['POST'])
 def inputs():

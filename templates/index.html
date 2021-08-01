@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Diabetes Prediction</title>
+
+    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="main">
+
+        <div class="container">
+            <form action="/input" method="POST" class="appointment-form" id="appointment-form">
+                <h2>Diabetes Information Form</h2>
+                <div class="form-group-1">
+                    <input type="number" name="preg" placeholder="No. of Pregnancies" required="required"/>
+                    <input type="number" name="plas" placeholder="Glucose" required="required"/>
+                    <input type="number" name="pres" placeholder="Blood Pressure" required="required"/>
+                    <input type="number" name="test" placeholder="Insulin" required="required"/>
+                    <input type="number" name="mass" placeholder="BMI" required="required"/>
+                    <input type="number" name="pedi" placeholder="Diabetes Pedigree" required="required"/>
+                    <input type="number" name="age" placeholder="Age" required="required"/>
+                </div>
+                <div class="form-submit">
+                    <input type="submit" name="submit" id="submit" class="submit" value="Submit" />
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
