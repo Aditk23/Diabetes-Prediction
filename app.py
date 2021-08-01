@@ -21,11 +21,14 @@ def inputs():
     h = request.form.get('age')
     pred = model.predict([[int(a),int(b),int(c),int(e),int(f),int(g),int(h)]])
     if(pred[0]):
-        output = 'diabetic'
+        output = 'have'
     else:
-        output='non-diabetic'
-    return render_template('output.html',predicted_text = f'Person is {output}')
+        output='dont have'
+    return render_template('output.html',predicted_text = f'You {output} diabetes')
 
+@app.route('/again',methods=['POST'])
+def again():
+    return render_template('index.html')
 
 
 # Run app

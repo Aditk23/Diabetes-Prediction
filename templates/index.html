@@ -1,41 +1,152 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<html>
+  <head>
     <title>Diabetes Prediction</title>
-
-    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
-
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-
-    <div class="main">
-
-        <div class="container">
-            <form action="/input" method="POST" class="appointment-form" id="appointment-form">
-                <h2>Diabetes Information Form</h2>
-                <div class="form-group-1">
-                    <input type="number" name="preg" placeholder="No. of Pregnancies" required="required"/>
-                    <input type="number" name="plas" placeholder="Glucose" required="required"/>
-                    <input type="number" name="pres" placeholder="Blood Pressure" required="required"/>
-                    <input type="number" name="test" placeholder="Insulin" required="required"/>
-                    <input type="number" name="mass" placeholder="BMI" required="required"/>
-                    <input type="number" name="pedi" placeholder="Diabetes Pedigree" required="required"/>
-                    <input type="number" name="age" placeholder="Age" required="required"/>
-                </div>
-                <div class="form-submit">
-                    <input type="submit" name="submit" id="submit" class="submit" value="Submit" />
-                </div>
-            </form>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <style>
+      html, body {
+      min-height: 90%;
+      }
+      body, div, form, input, select, textarea, p { 
+      padding: 10;
+      margin: 5;
+      outline: none;
+      font-family: Roboto, Arial, sans-serif;
+      font-size: 14px;
+      color: #666;
+      line-height: 22px;
+      }
+      h1 {
+      position: absolute;
+      margin: 0;
+      font-size: 38px;
+      color: #fff;
+      z-index: 2;
+      }
+      .testbox {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: inherit;
+      padding: 20px;
+      }
+      form {
+      width: 100%;
+      padding: 20px;
+      border-radius: 6px;
+      background: #fff;
+      box-shadow: 0 0 25px 0 #892e9b; 
+      }
+      .banner {
+      position: relative;
+      height: 210px;
+      background-image: url("https://res.cloudinary.com/grohealth/image/upload/c_fill,f_auto,fl_lossy,h_650,q_auto,w_1085/v1581695681/DCUK/Content/causes-of-diabetes.png");  
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      }
+      .banner::after {
+      content: "";
+      background-color: rgba(0, 0, 0, 0.3); 
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      }
+      input, select, textarea {
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      }
+      input {
+      width: calc(100% - 50px);
+      padding: 5px;
+          }
+      input[type="date"] {
+      padding: 4px 5px;
+      }
+      .btn-block {
+      margin-top: 10px;
+      text-align: center;
+      }
+      button {
+      width: 150px;
+      padding: 10px;
+      border: none;
+      border-radius: 5px; 
+      background: #892e9b;
+      font-size: 16px;
+      color: #fff;
+      cursor: pointer;
+      }
+      button:hover {
+      background: #b52ed1;
+      }
+      @media (min-width: 568px) {
+      .name-item, .city-item {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      }
+      .name-item input, .city-item input {
+      width: calc(50% - 20px);
+      }
+      .city-item select {
+      width: calc(50% - 8px);
+      }
+      }
+      .center {
+    margin-left: auto;
+    margin-right: auto;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="testbox">
+      <form action="/input" method="POST">
+        <div class="banner">
+          <h1>Diabetes Prediction</h1>
         </div>
+        </div>
+        <div class="item">
+          <table class="center">
+            <tr>
+            <td><label >Number of Pregnancies</label></td>
+            <td><input type="number" name="preg" required="required"/></td>
+            </tr>
+            <tr>
+            <td><label>Glucose</label></td>
+            <td><input type="number" name="plas" required="required"/></tr><td>
+            </tr>
+            <tr>
+            <td><label>Blood Pressure</label></td>
+            <td><input type="number" name="pres" required="required"/></td>
+            </tr>
+            <tr>
+            <td><label>Insulin</label></td>
+            <td><input type="number" name="test" required="required"/></td>
+            </tr>
+            <tr>
+            <td><label>BMI</label></td>
+            <td><input type="number" name="mass" required="required"/></td>
+            </tr>
+            <tr>
+            <td><label>Diabetes Pedigree</label></td>
+            <td><input type="number" name="pedi" required="required"/></td>
+            </tr>
+            <tr>
+            <td><label>Age</label></td>
+            <td><input type="number" name="age" required="required"/></td>
+            </tr>
 
+            </table>
+         </div>
+        <div class="btn-block">
+          <button type="submit" href="/">Predict</button>
+        </div>
+      </form>
     </div>
-
-
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="js/main.js"></script>
-</body>
+  </body>
 </html>
