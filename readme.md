@@ -1,1 +1,1 @@
-Diabetes prediction 
+Diabetes prediction : https://diabetes-prediction-by-adit.herokuapp.com/
